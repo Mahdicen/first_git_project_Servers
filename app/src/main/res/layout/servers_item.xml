@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:padding="2dp"
+    android:background="@drawable/server_shape"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="12dp"
+        android:layout_height="68dp"
+        android:background="@drawable/view_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNameOfServer"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Server One"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:textColor="?attr/colorOnSecondary"
+        android:id="@+id/txtPortNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="65.120.433 : 80"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/txtNameOfServer" />
+
+    <ImageView
+        android:background="?selectableItemBackground"
+        android:id="@+id/imgDeleteServer"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_baseline_delete_forever_24"
+        app:layout_constraintBottom_toBottomOf="@+id/txtPortNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtNameOfServer"
+        app:tint="?attr/colorOnSecondary" />
+
+    <ImageView
+        android:background="?selectableItemBackground"
+        android:id="@+id/imgEditServer"
+        android:layout_marginEnd="16dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:layout_constraintBottom_toBottomOf="@+id/imgDeleteServer"
+        app:layout_constraintEnd_toStartOf="@+id/imgDeleteServer"
+        app:layout_constraintTop_toTopOf="@+id/imgDeleteServer"
+        app:tint="?attr/colorOnSecondary" />
+
+    <ImageView
+        android:background="?selectableItemBackground"
+        android:id="@+id/imgShareServer"
+        android:layout_marginEnd="16dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:src="@drawable/ic_baseline_share_24"
+        app:layout_constraintBottom_toBottomOf="@+id/imgEditServer"
+        app:layout_constraintEnd_toStartOf="@+id/imgEditServer"
+        app:layout_constraintTop_toTopOf="@+id/imgEditServer"
+        app:tint="?attr/colorOnSecondary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
