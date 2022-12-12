@@ -64,6 +64,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerServers"
+        tools:listitem="@layout/servers_item"
         android:layout_weight="2.5"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
@@ -74,14 +75,29 @@
         android:layout_height="0dp">
 
         <TextView
-            android:layout_marginStart="16dp"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:text="Not connected"
             android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/searchMain"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:background="@drawable/search_shape"
+            android:padding="8dp"
+            android:text="Search..."
+            android:layout_width="264dp"
+            android:layout_height="42dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
