@@ -143,7 +143,10 @@ class MainActivity : AppCompatActivity(), ServersEvent {
     }
 
     override fun onClickShowDetails(server: ServersData, currentPosition: Int) {
-        TODO("Not yet implemented")
+
+        val bottomSheet = BottomSheetServerInfo()
+        bottomSheet.show(supportFragmentManager , null)
+
     }
 
 }
