@@ -1,11 +1,13 @@
 package com.example.firstgitproject
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstgitproject.databinding.ActivityMainBinding
@@ -91,6 +93,23 @@ class MainActivity : AppCompatActivity(), ServersEvent {
 
         }
 
+        binding.searchMain.addTextChangedListener { edtText ->
+
+            if (edtText!!.isNotEmpty()) {
+
+                val cloneServers = listOfServers.clone() as ArrayList<ServersData>
+                val filterList = cloneServers.filter { server ->
+                    server.nameServer.contains(edtText)
+                }
+
+                serversAdapter.setData(ArrayList(filterList))
+
+            } else {
+                serversAdapter.setData(listOfServers.clone() as ArrayList<ServersData>)
+            }
+
+        }
+
     }
 
     override fun onClickDelete(oldServer: ServersData, oldPosition: Int) {
@@ -142,11 +161,14 @@ class MainActivity : AppCompatActivity(), ServersEvent {
 
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onClickShowDetails(server: ServersData, currentPosition: Int) {
 
         val bottomSheet = BottomSheetServerInfo()
         bottomSheet.show(supportFragmentManager , null)
 
+        bottomSheet.binding.txtNameServer.text = "Name : " + server.nameServer
+        bottomSheet.binding.txtPortServer.text = "Port : " + server.portServer
     }
 
 }

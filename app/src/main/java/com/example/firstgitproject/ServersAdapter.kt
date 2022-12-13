@@ -72,6 +72,14 @@ class ServersAdapter(private val data: ArrayList<ServersData> , private val serv
 
     }
 
+    fun setData(servers :ArrayList<ServersData>) {
+
+        data.clear()
+        data.addAll(servers)
+        notifyDataSetChanged()
+
+    }
+
 }
 
 interface ServersEvent {
