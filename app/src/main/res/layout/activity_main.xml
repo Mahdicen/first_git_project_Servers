@@ -10,6 +10,7 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/gray"
         android:layout_weight="0.25"
         android:paddingBottom="16dp"
         android:layout_width="match_parent"
@@ -24,14 +25,14 @@
             android:src="@drawable/ic_baseline_menu_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="?attr/colorOnPrimary" />
+            app:tint="?attr/colorOnSecondary" />
 
         <TextView
             android:layout_marginStart="32dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Configuration file"
-            android:textColor="?attr/colorOnPrimary"
+            android:textColor="?attr/colorOnSecondary"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/imgMenu"
             app:layout_constraintStart_toEndOf="@+id/imgMenu"
@@ -46,7 +47,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/imgMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imgMenu"
-            app:tint="?attr/colorOnPrimary" />
+            app:tint="?attr/colorOnSecondary" />
 
         <ImageView
             android:id="@+id/imgAddServer"
@@ -57,7 +58,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/moreDetails"
             app:layout_constraintEnd_toStartOf="@+id/moreDetails"
             app:layout_constraintTop_toTopOf="@+id/moreDetails"
-            app:tint="?attr/colorOnPrimary" />
+            app:tint="?attr/colorOnSecondary" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -89,7 +90,7 @@
         <EditText
             android:id="@+id/searchMain"
             android:textSize="16sp"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorPrimary"
             android:background="@drawable/search_shape"
             android:padding="8dp"
             android:text="Search..."

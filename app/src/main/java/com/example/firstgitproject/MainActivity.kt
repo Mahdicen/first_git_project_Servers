@@ -14,6 +14,7 @@ import com.example.firstgitproject.databinding.ActivityMainBinding
 import com.example.firstgitproject.databinding.DialogAddServerBinding
 import com.example.firstgitproject.databinding.DialogEditServerBinding
 
+const val ABOUT_US_KEY = "AboutKey"
 class MainActivity : AppCompatActivity(), ServersEvent {
     lateinit var binding: ActivityMainBinding
     lateinit var serversAdapter: ServersAdapter
@@ -24,6 +25,13 @@ class MainActivity : AppCompatActivity(), ServersEvent {
         setContentView(binding.root)
 
         recyclerViewServers()
+
+        binding.imgMenu.setOnClickListener {
+
+            val dialogMenu = DialogFragmentMenuList()
+            dialogMenu.show(supportFragmentManager , null)
+
+        }
 
     }
 
